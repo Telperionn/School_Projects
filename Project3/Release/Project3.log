@@ -1,0 +1,14 @@
+﻿  cs232_Proj3_driver.cpp
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(569,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(520): message : while compiling class template member function 'std::list<TreeNode<info>,std::allocator<TreeNode<info>>> tree<info>::getlist(void)'
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\cs232_Proj3_driver.cpp(67): message : see reference to function template instantiation 'std::list<TreeNode<info>,std::allocator<TreeNode<info>>> tree<info>::getlist(void)' being compiled
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\cs232_Proj3_driver.cpp(35): message : see reference to class template instantiation 'tree<info>' being compiled
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(694,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(688): message : while compiling class template member function 'void tree<info>::store_msg(void)'
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\cs232_Proj3_driver.cpp(87): message : see reference to function template instantiation 'void tree<info>::store_msg(void)' being compiled
+  Generating code
+  2 of 342 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    37 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Project3.vcxproj -> C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Release\Project3.exe

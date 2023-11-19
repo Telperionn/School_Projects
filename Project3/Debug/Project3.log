@@ -1,0 +1,9 @@
+﻿  cs232_Proj3_driver.cpp
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(439,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(388): message : while compiling class template member function 'std::list<TreeNode<info>,std::allocator<TreeNode<info>>> tree<info>::getlist(void)'
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\cs232_Proj3_driver.cpp(44): message : see reference to function template instantiation 'std::list<TreeNode<info>,std::allocator<TreeNode<info>>> tree<info>::getlist(void)' being compiled
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\cs232_Proj3_driver.cpp(14): message : see reference to class template instantiation 'tree<info>' being compiled
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(522,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Tree.h(516): message : while compiling class template member function 'void tree<info>::store_msg(void)'
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\cs232_Proj3_driver.cpp(65): message : see reference to function template instantiation 'void tree<info>::store_msg(void)' being compiled
+  Project3.vcxproj -> C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project3\Debug\Project3.exe
