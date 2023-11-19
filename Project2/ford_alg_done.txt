@@ -1,0 +1,107 @@
+FORD:
+
+template <class V, class W>
+
+void Graph<V, W>::FordShortestPaths(V& v)
+{
+	int* cd = new int[G.size()];
+	string* pred = new string[G.size()];
+	int id, infinity;
+	vertex<V, W> temp;
+	std::deque<vertex<V, W>> q;
+	
+	for (int i = 0; i < G.size(); i++)
+	{
+		G[i].visited = 0;
+		pred[i] = "";
+		cd[i] = (INT_MAX - 1);
+	}
+	cd[isVertex(v)] = 0;
+
+	q.push_front(G[isVertex(v)]);
+	G[isVertex(v)].visited = 1;
+	infinity = INT_MAX;
+
+	while (!q.empty())
+	{
+		//front vertex from the queue
+		temp = q.front();
+		q.pop_front();
+		G[isVertex(temp.name)].visited = 1;
+
+		//adjusting all edges from vertex taken from queue
+		
+
+		for (typename list<edgeRep<V, W>>::iterator it = G[isVertex(temp.name)].edgelist.begin();
+			it != G[isVertex(temp.name)].edgelist.end(); it++)
+		{
+
+			if ((G[isVertex(it->name)].visited == 0) && (cd[isVertex(it->name)] > (cd[isVertex(temp.name)] + it->weight)))
+			{
+				cd[isVertex(it->name)] = (cd[isVertex(temp.name)] + it->weight);
+				pred[isVertex(it->name)] = temp.name;
+			}
+			//if vertex is not in queue, push into queue
+			if (G[isVertex(it->name)].visited == 0)
+			{
+				q.push_back(G[isVertex(it->name)]);
+			}
+		}
+
+		cout << "trace information after iteration: " << endl;
+		for (int i = 0; i < q.size(); i++)
+		{
+			cout << q[i].name << endl;
+		}
+		cout << endl;
+	}
+
+	for (unsigned k = 0; k < G.size(); k++)
+	{
+		if (G[k].name != v)
+		{
+			if(cd[k] != (infinity - 1))
+			{ 
+				cout << "shortest distance from " << v << " to " << G[k].name << " is: " << cd[k] << endl;
+				std::deque<string> path;
+				int p = isVertex(G[k].name);
+				while (p != isVertex(v))
+				{
+					if (pred[p] != "")
+					{
+						path.push_front(pred[p]);
+						p = isVertex(pred[p]);
+					}
+					else
+					{
+						p = isVertex(v);
+					}
+				}
+				cout << "The path from " << v << " to " << G[k].name << " is: " << endl << endl;
+				while (!path.empty())
+				{
+					string s = path.front();
+					path.pop_front();
+					cout << s << " to ";
+					if (!path.empty())
+					{
+						s = path.front();
+						cout << s << endl;
+					}
+					else
+					{
+						cout << G[k].name << endl;
+					}
+				}
+			}
+			else
+			{
+				cout << "There is no path from " << v << " to " << G[k].name << endl;
+			
+			}
+		}
+		cout << endl;
+	}
+
+	return;
+}

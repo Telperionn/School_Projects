@@ -1,0 +1,134 @@
+
+
+
+
+
+
+template <class V, class W> // V is the vertex class; W is edge weight class
+struct edgeRep
+{ 
+  V name;               // Vertex name
+  W weight;             // Edge weight
+};
+
+template <class V, class W>
+struct vertex           // cell structure for graph 
+{ 
+  V name;               // Vertex name
+  int visited;          // Used during traversal, Breadth-First or Depth-First
+  List<edge> edgelist; 	// Pointer to edge list
+};
+
+template <class V, class W>
+class Graph
+{ 
+  protected:
+    vertex<V,W> G[MAX]; // Main graph array/vector for adjacency list representation
+                       //  protected member functions
+
+  public:
+    Graph();   // Constructor
+    // . . . other constructors
+    ~Graph();  // Destructor
+    //Predicates:
+    int isVertex(V &v);  // Tests whether v is a vertex in the graph
+    int isUniEdge(V &v1, V &v2); // Tests whether edge <v1,v2> in graph
+    int isBiDirEdge(V &v1, V &v2);// Tests whether edge (v1,v2) in graph
+    	  // The following functions return -1 for failure, non-neg for success
+    int AddVertex(V &v);
+	  // Adds vertex with name v to the graph, if v is not already in 
+	  // graph, and returns the index where the vertex is stored.
+    int DeleteVertex(V &v);
+	  // Deletes vertex with name v from the graph, if v is in the graph.
+	  // If there are any edges incident on the vertex, these edges
+	  // are deleted also.
+    int AddUniEdge(V &v1, V &v2, W &wt);
+	  // Adds the directed edge <v1,v2,wt> to the graph; adds the vertices
+  	  // to the graph if the vertices are not already part of the graph    
+    int void  DeleteUniEdge(V &v1, V &v2);
+	  // Deletes the directed edge <v1,v2> (any weight) from the graph, if 
+	  // it is in the graph. The vertices are not deleted from the graph,
+	  // only the edge.
+    int AddBiDirEdge(V &v1, V &v2, W &wt);
+	  // Adds the bi-directional edge (v1,v2,wt) to the graph; adds the
+         // vertices to the graph if the vertices are not already part of 
+         // the graph
+    int DeleteBiDirEdge(V &v1, V &v2);
+	  // Deletes the bi-directional edge (v1,v2) (any weight) from the 
+	  // graph, if it is in the graph. The vertices are not deleted from 
+	  // the graph, only the edge.
+    void SimplePrintGraph();
+	  // Prints the list of vertices in the graph, and for each vertex,
+	  // prints the list of edges in proper parenthesized notation, namely
+	  // (v1,v2,wt) or <v1,v2,wt>.  NOTE: This is not a traversal.
+
+
+    void FordShortestPaths(V &v);
+	// Determines the shortest paths to all other vertices from the specified vertex.
+   	// MUST be IMPLEMENTED using Ford's algorithm BELOW and a 'DeQ'( double ended queue ) ADT 
+	// for processing the vertices.The  output must display paths from v
+   	// Trace information must be displayed,  i.e. the DeQ after each iteration. 
+  	// When done,  display the distances and the previous vertex for each vertex in the graph.
+	// That is, the minimum distance is displayed, along with the sequence of nodes in the path.
+	// Note: linked edgelist must be STL list and the DeQ must be implemented 
+	// using a STL container.	    
+    void mst();
+	// Determine the minimum spanning tree using Prim's algorithm.  
+	// Trace information must be shown showing the distance, neighbor and component arrays
+	// for each iteration. Weight of MST must be displayed. Also display who connected to whom 
+   
+
+    void GetGraph();
+        //Retrieves a graph from a special disk file and sets up the adjacency
+        //list for the graph.  I am supplying 1 such files.
+    void BFTraversal(V &v);
+	  // Performs Breadth First Traversal with trace information printed 
+    void DFTraversal(V &v);
+      // Performs a Depth First Traversal of the graph starting at 
+	  // specified vertex (parameter); prints trace information.
+    void DepthFirstTraversal(V &v); 
+      // Performs a recursive Depth First Traversal of the graph starting at the 
+	  // specified vertex (parameter); prints trace information:
+
+}
+
+
+
+
+FORD
+this algorithm will handle negative edges
+
+ford(weightedgraph g, vertex firstv)
+	for all vertices v
+currentD(v) = INFINITY;
+	currentD(firstv) = 0
+	while thereIsEdge vu such that currentD(u) > currentD(v) + weight(edge vu)
+		currentD(u) = currentD(v) + weight(edge vu)
+
+generic based on the ford algorithm above:
+shortestPaths(weightedgraph g, vertex firstv)
+	for all vertices v
+		currentD(v) = ?
+	currentD(firstv) = 0
+	toBeChecked = firstv
+	while toBeChecked not empty
+		v = vertex in toBeChecked
+		remove v from  toBeChecked
+		for all vertices u adjacent to v
+			if currentD(u) > currentD(v) + weight(edge vu)
+				currentD(u) = currentD(v) + weight(edge vu)
+				predecessor(u) = v
+				add u to toBeChecked if it is not there;
+
+
+
+
+
+
+
+
+
+
+
+
+

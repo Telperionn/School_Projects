@@ -1,0 +1,92 @@
+MST:
+
+template <class V, class W>
+void Graph<V, W>::mst()
+{
+	int spot, weightmin = INT_MAX, weightSUM = 0;
+	Graph<V, W> MST;
+	int* cd = new int[G.size()];
+	int* neighbor = new int[G.size()];
+	int* component = new int[G.size()];
+
+	for (int i = 0; i < G.size(); i++)
+	{
+		component[i] = 0;
+		neighbor[i] = 0;
+		cd[i] = (INT_MAX - 1);
+	}
+
+	for (typename list<edgeRep<V, W>>::iterator it = G[0].edgelist.begin();
+		it != G[0].edgelist.end(); it++)
+	{
+		cd[isVertex(it->name)] = it->weight;
+	}
+	component[0] = 1;
+	cd[0] = 0;
+
+	for (int i = 1; i < G.size(); i++)
+	{
+		weightmin = INT_MAX;
+
+		for (int j = 0; j < G.size(); j++)
+		{
+			if (component[j] == 0)
+			{
+				if (cd[j] < weightmin)
+				{
+					spot = j;
+					weightmin = cd[j];
+				}
+			}
+		}
+		if (weightmin < INT_MAX)
+		{
+			component[spot] = 1;
+			MST.AddBiDirEdge(G[spot].name, G[neighbor[spot]].name, cd[spot]);
+
+			for (typename list<edgeRep<V, W>>::iterator it = G[spot].edgelist.begin();
+				it != G[spot].edgelist.end(); it++)
+			{
+				if (component[isVertex(it->name)] == 0)
+				{
+					if (it->weight < cd[isVertex(it->name)])
+					{
+						cd[isVertex(it->name)] = it->weight;
+						neighbor[isVertex(it->name)] = spot;
+					}
+
+				}
+			}
+
+		}
+		else
+			break;
+
+		cout << "This is the distance array: " << endl;
+		for (int c = 0; c < G.size(); c++)
+		{
+			cout << cd[c] << " ";
+		}
+		cout << endl;
+		cout << "This is the neighbor array: " << endl;
+		for (int c = 0; c < G.size(); c++)
+		{
+			cout << neighbor[c] << " ";
+		}
+		cout << endl;
+		cout << "This is the component array: " << endl;
+		for (int c = 0; c < G.size(); c++)
+		{
+			cout << component[c] << " ";
+		}
+		cout << endl << endl;
+	}
+	cout << endl << endl;
+	for (int i = 0; i < G.size(); i++)
+	{
+		weightSUM += cd[i];
+	}
+	cout << "The weight of the MST is: " << weightSUM << ". " << endl;
+	MST.SimplePrintGraph();
+
+}
