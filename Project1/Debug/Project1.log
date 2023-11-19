@@ -1,0 +1,42 @@
+﻿  Graph.cpp
+  cs232_proj1_driver.cpp
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(333,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(326): message : while compiling class template member function 'double Graph<std::string,int>::ShortestDistance(V &,V &)'
+          with
+          [
+              V=std::string
+          ]
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\cs232_proj1_driver.cpp(147): message : see reference to function template instantiation 'double Graph<std::string,int>::ShortestDistance(V &,V &)' being compiled
+          with
+          [
+              V=std::string
+          ]
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\cs232_proj1_driver.cpp(30): message : see reference to class template instantiation 'Graph<std::string,int>' being compiled
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(343,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(345,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(460,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(457): message : while compiling class template member function 'void Graph<std::string,int>::BFTraversal(V &)'
+          with
+          [
+              V=std::string
+          ]
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\cs232_proj1_driver.cpp(154): message : see reference to function template instantiation 'void Graph<std::string,int>::BFTraversal(V &)' being compiled
+          with
+          [
+              V=std::string
+          ]
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(489,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(521,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(518): message : while compiling class template member function 'void Graph<std::string,int>::DFTraversal(V &)'
+          with
+          [
+              V=std::string
+          ]
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\cs232_proj1_driver.cpp(161): message : see reference to function template instantiation 'void Graph<std::string,int>::DFTraversal(V &)' being compiled
+          with
+          [
+              V=std::string
+          ]
+C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Graph.t(555,21): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Project1.vcxproj -> C:\Users\patri\OneDrive\Desktop\CS232_LABS\Project1\Debug\Project1.exe
