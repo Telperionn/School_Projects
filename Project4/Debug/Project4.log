@@ -1,0 +1,7 @@
+﻿  driver.cpp
+C:\Users\Pat\Desktop\Project4\driver.cpp(63,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Pat\Desktop\Project4\driver.cpp(86,11): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Pat\Desktop\Project4\driver.cpp(141,10): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Pat\Desktop\Project4\driver.cpp(413): warning C4715: 'getstate': not all control paths return a value
+C:\Users\Pat\Desktop\Project4\table.t(99): warning C4715: 'Table<Pair<char,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::lookUp': not all control paths return a value
+  Project4.vcxproj -> C:\Users\Pat\Desktop\Project4\Debug\Project4.exe
